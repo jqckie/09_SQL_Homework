@@ -1,107 +1,65 @@
-# Homework Assignment
-
-## Installation Instructions
-
-* Refer to the [installation guide](Installation.md) to install the necessary files.
+# SQL Sample Queries
 
 ## Instructions
 
-* 1a. Display the first and last names of all actors from the table `actor`.
+* Open [sample_queries.sql](sample_queries.sql) to review sample queries from the Sakila DB
 
-* 1b. Display the first and last name of each actor in a single column in upper case letters. Name the column `Actor Name`.
+## Details
 
-* 2a. You need to find the ID number, first name, and last name of an actor, of whom you know only the first name, "Joe." What is one query would you use to obtain this information?
+* 1a. Displaying the first and last names of all actors from the table `actor`.
 
-* 2b. Find all actors whose last name contain the letters `GEN`:
+* 1b. Displaying the first and last name of each actor in a single column in upper case letters. Name the column `Actor Name`.
 
-* 2c. Find all actors whose last names contain the letters `LI`. This time, order the rows by last name and first name, in that order:
+* 2a. Finding the ID number, first name, and last name of an actor, of whom you know only the first name, "Joe." 
 
-* 2d. Using `IN`, display the `country_id` and `country` columns of the following countries: Afghanistan, Bangladesh, and China:
+* 2b. Finding all actors whose last name contain the letters `GEN`:
 
-* 3a. You want to keep a description of each actor. You don't think you will be performing queries on a description, so create a column in the table `actor` named `description` and use the data type `BLOB` (Make sure to research the type `BLOB`, as the difference between it and `VARCHAR` are significant).
+* 2c. Finding all actors whose last names contain the letters `LI` and sorting the results by last name then first name
 
-* 3b. Very quickly you realize that entering descriptions for each actor is too much effort. Delete the `description` column.
+* 2d. Displaying the `country_id` and `country` columns of the following countries: Afghanistan, Bangladesh, and China
 
-* 4a. List the last names of actors, as well as how many actors have that last name.
+* 3a. Creating a column in the table `actor` named `description` and use the data type `BLOB`
 
-* 4b. List last names of actors and the number of actors who have that last name, but only for names that are shared by at least two actors
+* 3b.Deleting the `description` column.
 
-* 4c. The actor `HARPO WILLIAMS` was accidentally entered in the `actor` table as `GROUCHO WILLIAMS`. Write a query to fix the record.
+* 4a. Listing the last names of actors, as well as how many actors have that last name.
 
-* 4d. Perhaps we were too hasty in changing `GROUCHO` to `HARPO`. It turns out that `GROUCHO` was the correct name after all! In a single query, if the first name of the actor is currently `HARPO`, change it to `GROUCHO`.
+* 4b. Listing last names of actors and the number of actors who have that last name, but only for names that are shared by at least two actors
 
-* 5a. You cannot locate the schema of the `address` table. Which query would you use to re-create it?
+* 4c. Writing a query to locate the actor `GROUCHO WILLIAMS` and updating the actor's name to `HARPO WILLIAMS`
 
-  * Hint: [https://dev.mysql.com/doc/refman/5.7/en/show-create-table.html](https://dev.mysql.com/doc/refman/5.7/en/show-create-table.html)
+* 4d. Writing a follow-up query to undo the name change from `GROUCHO WILLIAMS` to `HARPO WILLIAMS`
 
-* 6a. Use `JOIN` to display the first and last names, as well as the address, of each staff member. Use the tables `staff` and `address`:
+* 5a. Writing a query to recreate the schema of the `address` table. 
 
-* 6b. Use `JOIN` to display the total amount rung up by each staff member in August of 2005. Use tables `staff` and `payment`.
+* 6a. Using `JOIN` to display the first and last names, as well as the address, of each staff member from the tables `staff` and `address`
 
-* 6c. List each film and the number of actors who are listed for that film. Use tables `film_actor` and `film`. Use inner join.
+* 6b. Using `JOIN` to display the total amount rung up by each staff member in August of 2005 from the tables `staff` and `payment`.
 
-* 6d. How many copies of the film `Hunchback Impossible` exist in the inventory system?
+* 6c. Listing each film and the number of actors who are listed for that film from the tables `film_actor` and `film` via inner join.
 
-* 6e. Using the tables `payment` and `customer` and the `JOIN` command, list the total paid by each customer. List the customers alphabetically by last name:
+* 6d. Listing the number of copies of the film `Hunchback Impossible` exist in the inventory system.
 
-  ![Total amount paid](Images/total_payment.png)
+* 6e. Using the tables `payment` and `customer` and the `JOIN` command to list the total paid by each customer, and displaying the results alphabetically by customer last name
 
-* 7a. The music of Queen and Kris Kristofferson have seen an unlikely resurgence. As an unintended consequence, films starting with the letters `K` and `Q` have also soared in popularity. Use subqueries to display the titles of movies starting with the letters `K` and `Q` whose language is English.
+* 7a. Using subqueries to display the titles of movies starting with the letters `K` and `Q` whose language is English.
 
-* 7b. Use subqueries to display all actors who appear in the film `Alone Trip`.
+* 7b. Using subqueries to display all actors who appear in the film `Alone Trip`.
 
-* 7c. You want to run an email marketing campaign in Canada, for which you will need the names and email addresses of all Canadian customers. Use joins to retrieve this information.
+* 7c. Using joins to retrieve the names and email addresses of all Canadian customers.
 
-* 7d. Sales have been lagging among young families, and you wish to target all family movies for a promotion. Identify all movies categorized as _family_ films.
+* 7d. Identifying all movies categorized as _family_ films.
 
-* 7e. Display the most frequently rented movies in descending order.
+* 7e. Displaying the most frequently rented movies in descending order.
 
-* 7f. Write a query to display how much business, in dollars, each store brought in.
+* 7f. Querying to display how much business, in dollars, each store brought in.
 
-* 7g. Write a query to display for each store its store ID, city, and country.
+* 7g. Querying to display for each store its store ID, city, and country.
 
-* 7h. List the top five genres in gross revenue in descending order. (**Hint**: you may need to use the following tables: category, film_category, inventory, payment, and rental.)
+* 7h. Listing the top five genres in gross revenue in descending order using the tables category, film_category, inventory, payment, and rental.
 
-* 8a. In your new role as an executive, you would like to have an easy way of viewing the Top five genres by gross revenue. Use the solution from the problem above to create a view. If you haven't solved 7h, you can substitute another query to create a view.
+* 8a. Creating a view for the previous query. 
 
-* 8b. How would you display the view that you created in 8a?
+* 8b. Displaying the newly created `top_five_genres` view.
 
-* 8c. You find that you no longer need the view `top_five_genres`. Write a query to delete it.
-
-## Appendix: List of Tables in the Sakila DB
-
-* A schema is also available as `sakila_schema.svg`. Open it with a browser to view.
-
-```sql
-'actor'
-'actor_info'
-'address'
-'category'
-'city'
-'country'
-'customer'
-'customer_list'
-'film'
-'film_actor'
-'film_category'
-'film_list'
-'film_text'
-'inventory'
-'language'
-'nicer_but_slower_film_list'
-'payment'
-'rental'
-'sales_by_film_category'
-'sales_by_store'
-'staff'
-'staff_list'
-'store'
-```
-
-## Uploading Homework
-
-* To submit this homework using BootCampSpot:
-
-  * Create a GitHub repository.
-  * Upload your .sql file with the completed queries.
-  * Submit a link to your GitHub repo through BootCampSpot.
+* 8c. Deleting the newly created `top_five_genres` view. 
